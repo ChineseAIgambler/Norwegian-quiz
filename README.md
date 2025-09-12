@@ -1,0 +1,2 @@
+# Norwegian-quiz
+duh
