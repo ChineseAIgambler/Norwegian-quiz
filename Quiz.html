@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Norwegian Vocabulary Quiz</title>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+}
+h2 {
+    text-align: center;
+}
+form {
+    margin-top: 20px;
+}
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #2563eb;
+}
+#result {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
+</style>
+</head>
+<body>
+
+<h2>Norwegian Vocabulary Quiz</h2>
+<form id="quizForm">
+    <div>
+        <p>What is the Norwegian word for "Apple"?</p>
+        <label><input type="radio" name="q1" value="Eple"> Eple</label><br>
+        <label><input type="radio" name="q1" value="Banan"> Banan</label><br>
+        <label><input type="radio" name="q1" value="Appelsin"> Appelsin</label>
+    </div>
+    <div>
+        <p>What is the Norwegian word for "Book"?</p>
+        <label><input type="radio" name="q2" value="Bok"> Bok</label><br>
+        <label><input type="radio" name="q2" value="Penn"> Penn</label><br>
+        <label><input type="radio" name="q2" value="Bord"> Bord</label>
+    </div>
+    <div>
+        <p>What is the Norwegian word for "House"?</p>
+        <label><input type="radio" name="q3" value="Hus"> Hus</label><br>
+        <label><input type="radio" name="q3" value="Bil"> Bil</label><br>
+        <label><input type="radio" name="q3" value="Tre"> Tre</label>
+    </div>
+    <button type="button" onclick="submitQuiz()">Submit</button>
+</form>
+<div id="result"></div>
+
+<script>
+function submitQuiz() {
+    const answers = {
+        q1: "Eple",
+        q2: "Bok",
+        q3: "Hus"
+    };
+    let score = 0;
+    for (const q in answers) {
+        const selected = document.querySelector(`input[name="${q}"]:checked`);
+        if (selected && selected.value === answers[q]) {
+            score++;
+        }
+    }
+    document.getElementById("result").innerText = "You scored " + score + " out of 3.";
+}
+</script>
+
+</body>
+</html>
