@@ -1,4 +1,3 @@
-<!-- Save this as norwegian-quiz.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,13 +10,14 @@ body {
     background-color: #222;
     color: #fff;
     padding: 20px;
+    max-width: 700px;
+    margin: auto;
 }
 h2 {
     text-align: center;
 }
 form {
-    max-width: 600px;
-    margin: 0 auto;
+    margin-top: 20px;
 }
 button {
     display: block;
@@ -32,25 +32,30 @@ button {
 button:hover {
     background-color: #2563eb;
 }
+#result {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 15px;
+}
 </style>
 </head>
 <body>
 
 <h2>Norwegian Vocabulary Quiz</h2>
 <form id="quizForm">
-    <div style="margin-bottom:15px;">
+    <div>
         <p>What is the Norwegian word for "Apple"?</p>
         <label><input type="radio" name="q1" value="Eple"> Eple</label><br>
         <label><input type="radio" name="q1" value="Banan"> Banan</label><br>
         <label><input type="radio" name="q1" value="Appelsin"> Appelsin</label>
     </div>
-    <div style="margin-bottom:15px;">
+    <div>
         <p>What is the Norwegian word for "Book"?</p>
         <label><input type="radio" name="q2" value="Bok"> Bok</label><br>
         <label><input type="radio" name="q2" value="Penn"> Penn</label><br>
         <label><input type="radio" name="q2" value="Bord"> Bord</label>
     </div>
-    <div style="margin-bottom:15px;">
+    <div>
         <p>What is the Norwegian word for "House"?</p>
         <label><input type="radio" name="q3" value="Hus"> Hus</label><br>
         <label><input type="radio" name="q3" value="Bil"> Bil</label><br>
@@ -58,7 +63,7 @@ button:hover {
     </div>
     <button type="button" onclick="submitQuiz()">Submit</button>
 </form>
-<div id="result" style="margin-top:15px; text-align:center;"></div>
+<div id="result"></div>
 
 <script>
 function submitQuiz() {
@@ -74,7 +79,7 @@ function submitQuiz() {
             score++;
         }
     }
-    document.getElementById("result").innerText = `You scored ${score} out of 3.`;
+    document.getElementById("result").innerText = "You scored " + score + " out of 3.";
 }
 </script>
 
